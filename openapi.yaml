@@ -1,0 +1,122 @@
+
+openapi: 3.0.1
+info:
+  title: ShoppyFit Retail Agentic AI API
+  description: API to search multi-brand product catalog (Mayes NYC, Nike, Adidas) with image previews and try-on links.
+  version: "1.0.0"
+servers:
+  - url: https://REPLACE-WITH-YOUR-RENDER-URL
+paths:
+  /api/products:
+    get:
+      summary: Search products
+      description: Search the ShoppyFit catalog for products that match shopper needs.
+      parameters:
+        - in: query
+          name: query
+          schema:
+            type: string
+          required: true
+          description: Search keyword, e.g. "dress" or "sneakers"
+        - in: query
+          name: max_price
+          schema:
+            type: number
+          required: false
+          description: Maximum budget for product
+        - in: query
+          name: brand
+          schema:
+            type: string
+          required: false
+          description: Brand filter (e.g., "Nike", "Adidas", "Mayes NYC")
+        - in: query
+          name: size
+          schema:
+            type: string
+          required: false
+          description: Size filter (e.g., "M" or "10")
+      responses:
+        "200":
+          description: A list of matching products
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      example: "nike-001"
+                    brand:
+                      type: string
+                      example: "Nike"
+                    title:
+                      type: string
+                      example: "Nike Air Zoom Pegasus 40"
+                    description:
+                      type: string
+                      example: "Lightweight running shoe with Zoom Air cushioning."
+                    price:
+                      type: number
+                      example: 130
+                    currency:
+                      type: string
+                      example: "USD"
+                    sizes:
+                      type: array
+                      items:
+                        type: string
+                      example: ["8", "9", "10"]
+                    image_url:
+                      type: string
+                      example: "https://via.placeholder.com/400x400.png?text=Nike+Pegasus"
+                    fit_recommendation:
+                      type: string
+                      example: "True to size"
+                    tryon_url:
+                      type: string
+                      example: "https://shoppyfit.com/tryon/nike-001"
+  /api/products/{product_id}:
+    get:
+      summary: Get product by ID
+      parameters:
+        - in: path
+          name: product_id
+          required: true
+          schema:
+            type: string
+          description: Product identifier (e.g., "nike-001")
+      responses:
+        "200":
+          description: Product details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  brand:
+                    type: string
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  price:
+                    type: number
+                  currency:
+                    type: string
+                  sizes:
+                    type: array
+                    items:
+                      type: string
+                  image_url:
+                    type: string
+                  fit_recommendation:
+                    type: string
+                  tryon_url:
+                    type: string
+        "404":
+          description: Not found

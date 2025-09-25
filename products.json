@@ -1,0 +1,50 @@
+[
+  {
+    "id": "mayes-001",
+    "brand": "Mayes NYC",
+    "title": "Satin Evening Dress",
+    "description": "Elegant red satin dress for weddings or evening events.",
+    "price": 280,
+    "currency": "USD",
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "image_url": "https://via.placeholder.com/400x560.png?text=Mayes+Dress",
+    "fit_recommendation": "Best fit: M, based on your profile",
+    "tryon_url": "https://shoppyfit.com/tryon/mayes-001"
+  },
+  {
+    "id": "nike-001",
+    "brand": "Nike",
+    "title": "Air Zoom Pegasus 40",
+    "description": "Lightweight running shoe with Zoom Air cushioning.",
+    "price": 130,
+    "currency": "USD",
+    "sizes": [
+      "8",
+      "9",
+      "10"
+    ],
+    "image_url": "https://via.placeholder.com/400x400.png?text=Nike+Pegasus",
+    "fit_recommendation": "True to size",
+    "tryon_url": "https://shoppyfit.com/tryon/nike-001"
+  },
+  {
+    "id": "adidas-001",
+    "brand": "Adidas",
+    "title": "Ultraboost Light",
+    "description": "High-performance running shoe with Boost midsole.",
+    "price": 119,
+    "currency": "USD",
+    "sizes": [
+      "9",
+      "10",
+      "11"
+    ],
+    "image_url": "https://via.placeholder.com/400x400.png?text=Adidas+Ultraboost",
+    "fit_recommendation": "Runs small, size up recommended",
+    "tryon_url": "https://shoppyfit.com/tryon/adidas-001"
+  }
+]
